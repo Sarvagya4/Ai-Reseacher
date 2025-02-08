@@ -51,6 +51,8 @@ def search_web(state: ResearchState):
     tavily_api_key = os.getenv("TAVILY_API_KEY")
     search = TavilySearchResults(max_results=3)
     search_results = search.invoke(state["query"])
+    
+    print("Search Results:", search_results)
 
     return  {
         "sources": [result['url'] for result in search_results],
@@ -58,7 +60,7 @@ def search_web(state: ResearchState):
     }
 
 def summarize_results(state: ResearchState):
-    model = ChatOllama(model="deepseek-r1:8b")
+    model = ChatOllama(model="deepseek-r1:1.5b")
     prompt = ChatPromptTemplate.from_template(summary_template)
     chain = prompt | model
 
@@ -68,12 +70,14 @@ def summarize_results(state: ResearchState):
         clean_content = clean_text(summary.content)
         summarized_results.append(clean_content)
 
+    print("Summarized Results", summarized_results)
+    
     return {
         "summarized_results": summarized_results
     }
 
 def generate_response(state: ResearchState):
-    model = ChatOllama(model="deepseek-r1:8b")
+    model = ChatOllama(model="deepseek-r1:1.5b")
     prompt = ChatPromptTemplate.from_template(generate_response_template)
     chain = prompt | model
 
