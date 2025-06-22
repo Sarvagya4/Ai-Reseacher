@@ -67,16 +67,6 @@ Contributions are welcome! To contribute:
 4. Push to the branch (`git push origin feature/your-feature`).
 5. Open a pull request.
 
-Please open an issue to discuss major changes before submitting code.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
-
-## Related Projects
-Explore similar AI-driven research tools:
-- [HKUDS/AI-Researcher](https://github.com/HKUDS/AI-Researcher): A system for automated scientific discovery.
-- [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher): An LLM-based agent for deep research with citations.
-- [SakanaAI/AI-Scientist](https://github.com/SakanaAI/AI-Scientist): A tool for fully automated scientific discovery.
 
 ## Notes
 - This tool is intended for research purposes only. Always verify generated information for accuracy.
